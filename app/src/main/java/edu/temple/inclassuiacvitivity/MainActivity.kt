@@ -21,8 +21,9 @@ class MainActivity : AppCompatActivity() {
 
         with (spinner) {
             /* Step 2: Create adapter to display items from array in Spinner */
-            adapter = ArrayAdapter(this@MainActivity, android.R.layout.simple_spinner_item, numberArray)
+            //adapter = ArrayAdapter(this@MainActivity, android.R.layout.simple_spinner_item, numberArray)
 
+            adapter = TextSizeAdapter(numberArray, this@MainActivity)
 
             // Step 3: Change TextView's text size to the number selected in the Spinner */
             onItemSelectedListener = object : OnItemSelectedListener {

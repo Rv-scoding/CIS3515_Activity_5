@@ -3,23 +3,29 @@ package edu.temple.inclassuiacvitivity
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.TextView
 
-class TextSizeAdapter : BaseAdapter() {
+class TextSizeAdapter(numberArray: Array<Int>, activity: MainActivity) : BaseAdapter() {
 
-    override fun getCount(): Int {
-        TODO("Not yet implemented")
-    }
 
-    override fun getItem(position: Int): Any {
-        TODO("Not yet implemented")
-    }
+    override fun getCount() = numbers.size
 
-    override fun getItemId(position: Int): Long {
-        TODO("Not yet implemented")
-    }
+
+
+    override fun getItem(position: Int) = numbers[position]
+
+
+    override fun getItemId(position: Int) = position.toLong()
+
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        TODO("Not yet implemented")
+        val textView: TextView
+        if (convertView == null)
+            textView = TextView(c)
+        else
+            textView = (convertView as TextView)
+        textView.text = numbers[position].toString()
+        return textView
     }
 
 }
